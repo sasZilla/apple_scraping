@@ -1,0 +1,18 @@
+.search-header
+  =form_tag("/apple/show", method: "get", remote: true, id: 'check-result') do
+    .input-group
+      =text_field_tag(:imei, nil, :placeholder => 'Enter your hardware serial number', :class => 'form-control')
+      span.input-group-btn
+        =submit_tag("Search", :class => "btn btn-info")
+    p.search-header__example
+      | Examples:
+      =link_to('013977000323877', '/apple/show?imei=013977000323877', :remote => true)
+      | ,
+      =link_to('013896000639712', '/apple/show?imei=013896000639712', :remote => true)
+      | ,
+      =link_to('013894001769570', '/apple/show?imei=013894001769570', :remote => true)
+#show
+
+#spinner.progress-spinner.hide
+  span.progress-spinner__text Waiting
+  i.fa.fa-cog.fa-spin

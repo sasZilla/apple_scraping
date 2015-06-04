@@ -1,0 +1,26 @@
+-if @result
+  .well
+    .display-info.list-group
+      .list-group-item
+        .display-info__cell
+          =image_tag(@result[:image])
+        .display-info__cell
+          h4.media-heading.list-group-item-heading =@result[:title]
+          h5.media-heading.list-group-item-heading.red-color =@warranty
+          p.ist-group-item-text
+            | IEMI: #{@result[:imei]}
+
+    .list-group
+      .list-group-item
+        h4.list-group-item-heading =@result[:registration][:status]
+        p.list-group-item-text =@result[:registration][:description]
+
+    .list-group
+      .list-group-item
+        h4.list-group-item-heading =@result[:phone][:status]
+        p.list-group-item-text =@result[:phone][:description]
+
+    .list-group
+      .list-group-item
+        h4.list-group-item-heading =@result[:hardware][:status]
+        p.list-group-item-text =@result[:hardware][:description]
